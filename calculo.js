@@ -1,47 +1,40 @@
 //capturar los textos
 
-const deposito_texto = document.getElementById("depositoActual"),
-    retiro_texto = document.getElementById("retiroActual"), 
-    balance_texto = document.getElementById("balanceActual"),
-    //capturar los input
-    input_deposito = document.getElementById("depositoInput"),
-    input_retiro = document.getElementById("retiroInput")
-    //capturar botones
-    btn_deposito = document.getElementById("calcularDeposito"),
-    btn_retiro = document.getElementById("calcularRetiro")
+const depositoTexto =document.getElementById('depositoActual'),
+    retiroTexto= document.getElementById('retiroActual'),
+    balanceTexto=document.getElementById('balanceActual'),
+    //Capturar los input
+    inputDeposito=document.getElementById('depositoInput'),
+    inputRetiro=document.getElementById('retiroInput'),
+    //Capturar botones
+    btnDeposito=document.getElementById('calcularDeposito'),
+    btnRetiro=document.getElementById('calcularRetiro')
 ;
 
 //agregar evento
 
-btn_deposito.addEventListener('click',(event)=>{
-    console.log("hola")
-    const valor_deposito = input_deposito.value
-
-    const total_deposito = Number(deposito_texto.innerText) + Number(valor_deposito)
-
-    const total_valance = Number(balance_texto.innerText)+Number(valor_deposito)
-
-    deposito_texto.innerHTML=total_deposito
- 
-    valor_texto.innerHTML=total_valance
-
-    input_deposito.value=""
+//Agregar evento deposito
+btnDeposito.addEventListener('click',(event)=>{
+    const valorDeposito= inputDeposito.value
+    const totalDeposito=Number(depositoTexto.innerText)+Number(valorDeposito)
+    const totalBalance=Number(balanceTexto.innerText)+Number(valorDeposito)
+    depositoTexto.innerHTML=totalDeposito
+    balanceTexto.innerHTML=totalBalance
+    inputDeposito.value=''  
 })
+//Evento del retiro
 
-btn_retiro.addEventListener('click',(event)=>{
-    console.log("hola")
-    const valor_retiro = input_deposito.value
-
-    if(valor_retiro==0){
+btnRetiro.addEventListener('click',(event)=>{
+    const valorRetiro= inputRetiro.value
+    if(valorRetiro==0){
         alert("No tengo nada que retirar")
         return
     }
-
-    if(Number(valor_retiro)>Number(balance_texto.innerText)){
-        alert("No ay dinero suficiente")
-
+    if(Number(valorRetiro)>Number(balanceTexto.innerText)){
+        alert("No hay dinero suficiente")
+        alert("Terricola")
         return
     }
-
     alert("Retiro exitoso")
+     
 })

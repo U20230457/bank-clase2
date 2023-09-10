@@ -4,9 +4,25 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+html{
+    width: auto;
+}
+
 h1{
     text-align: center;
     padding-top: 15px;
     padding-bottom: 10px;
 }
 
+footer{
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-color: darkgray;
+}
+
+footer p{
+    padding: 0;
+    margin: 0;
+}
